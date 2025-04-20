@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="3">
+    <listeners>
+        <listener class-name="listeners.TestListeners" />
+        <listener class-name="listeners.ExtentReportListener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="/Users/priyankubora/Documents/Learnings/Selenium Basics/selenium-pom-testng framework/selenium-testng-pom">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTest" />
+            <!-- add more test classes here -->
+        </classes>
+    </test>
+</suite>
