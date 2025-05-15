@@ -19,6 +19,13 @@ public class LoginTest extends BaseTest {
         loginPage.login(username,password);
     }
 
+    @Test(dataProvider = "loginData",dataProviderClass = TestDataProvider.class)
+    public void testExcelLogin(String username,String password){
+        DriverFactory.getDriver().get("https://freelance-learn-automation.vercel.app/login");
+        LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
+        loginPage.login(username,password);
+    }
+
     @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testInvalidLogin(){
         DriverFactory.getDriver().get("https://freelance-learn-automation.vercel.app/login");
